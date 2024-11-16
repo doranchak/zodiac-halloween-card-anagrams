@@ -5,3 +5,4 @@ It shows a picture of the back of the Zodiac Killer's Halloween card.  Use the b
 
 Demo: https://doranchak.github.io/zodiac-halloween-card-anagrams/index.html
 
+(Note: if the card image doesn't display the first time, hit Reload in your browser.  I'm not sure why this happens!)
