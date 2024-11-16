@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Image Layering</title>
+    <style>
+        #container {
+            position: relative;
+            width: 424px;
+            height: 700px;
+            border: thin solid #999;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #controls {
+            margin-top: 1em;
+        }
+        #output {
+            position: absolute;
+            top: 210px; 
+            left: 450px;
+        }
+        .spacer {
+            width: 18px;
+            display:inline-block;
+        }
+        .letter {
+            height: 40px;
+            top: 0;
+            left: 0;
+            padding: 3px;
+        }
+        .letter-invert {
+            height: 40px;
+            top: 0;
+            left: 0;
+            padding: 3px;
+            filter: invert(1);
+            background-color: white;
+        }
+        #canvas3 {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <canvas id="canvas1" width="424" height="700"></canvas>
+        <canvas id="canvas2" width="424" height="700"></canvas>
+        <canvas id="canvas3" width="424" height="700"></canvas>
+    </div>
+    <div id="controls">
+        <textarea id="text" cols="80" rows="4"></textarea><br>
+        <button onClick="startAnimate()">Animate</button>
+        <script>
+            const inputField = document.getElementById('text');
+            
+            inputField.addEventListener('input', function() {
+            //   console.log('Current input value:', inputField.value);
+              // Call your function here
+              update(inputField.value);
+            });
+        </script>
+    </div>
+    <div id="output">
+    <!-- <img class="letter" src="img/letters/text01.png"/>
+    <img class="letter" src="img/letters/text02.png"/><span class="spacer">&nbsp;</span>
+    <img class="letter" src="img/letters/text03.png"/>
+    <img class="letter" src="img/letters/text04.png"/>
+    <img class="letter" src="img/letters/text05.png"/>
+    <img class="letter" src="img/letters/text06.png"/><br/>
+    <img class="letter" src="img/letters/text07.png"/>
+    <img class="letter" src="img/letters/text08.png"/><span class="spacer">&nbsp;</span>
+    <img class="letter" src="img/letters/text09.png"/>
+    <img class="letter" src="img/letters/text10.png"/>
+    <img class="letter" src="img/letters/text11.png"/><br/>
+    <img class="letter" src="img/letters/text12.png"/>
+    <img class="letter" src="img/letters/text13.png"/><span class="spacer">&nbsp;</span>
+    <img class="letter" src="img/letters/text14.png"/>
+    <img class="letter" src="img/letters/text15.png"/>
+    <img class="letter" src="img/letters/text16.png"/>
+    <img class="letter" src="img/letters/text17.png"/>
+    <img class="letter" src="img/letters/text18.png"/><br/>
+    <img class="letter" src="img/letters/text19.png"/>
+    <img class="letter" src="img/letters/text20.png"/><span class="spacer">&nbsp;</span>
+    <img class="letter" src="img/letters/text21.png"/>
+    <img class="letter" src="img/letters/text22.png"/>
+    <img class="letter" src="img/letters/text23.png"/>
+    <img class="letter" src="img/letters/text24.png"/><br/>
+    <img class="letter" src="img/letters/text25.png"/>
+    <img class="letter" src="img/letters/text26.png"/>
+    <img class="letter" src="img/letters/text27.png"/>
+    <img class="letter" src="img/letters/text28.png"/>
+    <img class="letter" src="img/letters/text29.png"/>
+    <img class="letter" src="img/letters/text30.png"/>
+    <img class="letter" src="img/letters/text31.png"/>
+    <img class="letter" src="img/letters/text32.png"/><br/>
+    <img class="letter" src="img/letters/text33.png"/>
+    <img class="letter" src="img/letters/text34.png"/>
+    <img class="letter" src="img/letters/text35.png"/>
+    <img class="letter" src="img/letters/text36.png"/>
+    <img class="letter" src="img/letters/text37.png"/>
+    <img class="letter" src="img/letters/text38.png"/> -->
+    </div>
+    <div id="leftover"></div>
+    <script src="script.js"></script>
+</body>
+</html>
